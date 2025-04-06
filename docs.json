@@ -1,9 +1,9 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Bigdata.com",
   "colors": {
-    "primary": "#16A34A",
+    "primary": "#4CA7F9",
     "light": "#07C983",
     "dark": "#15803D"
   },
@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Welcome",
         "groups": [
           {
             "group": "Get Started",
@@ -35,7 +35,7 @@
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "Quickstart guides",
         "groups": [
           {
             "group": "API Documentation",
@@ -53,6 +53,42 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "SDKs",
+        "groups": [
+          {
+            "group": "bigdata-client",
+            "pages": [
+              {
+                "group": "Knowledge Graph",
+                "pages": ["sdk/bigdata_client/knowledge_graph/find_company", "sdk/bigdata_client/knowledge_graph/find_etf"]
+              },
+              {
+                "group": "Search",
+                "pages": ["sdk/bigdata_client/search/query_filters/entity"]
+              }
+            ]
+          },
+          {
+            "group": "bigdata-research-tools",
+            "pages": [
+              "sdk/knowledge-graph"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "How-to guides"
+      },
+      {
+        "tab": "Cookbooks"
+      },
+      {
+        "tab": "Prod config"
+      },
+      {
+        "tab": "Release notes"
       }
     ],
     "global": {
@@ -76,8 +112,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/bigdata_light.svg",
+    "dark": "/logo/bigdata_dark.svg"
   },
   "navbar": {
     "links": [

@@ -1,0 +1,92 @@
+# Parameter Fields
+
+> Set path, query, and body parameters
+
+`ParamField` components help define the parameters for your APIs or SDKs. Adding a ParamField will automatically add an 
+
+<ParamField path="param" type="string" required>
+  An example of a parameter path field
+</ParamField>
+
+<ParamField query="query-filter" type="string" default="none" required>
+    An example of a parameter query field
+  </ParamField>
+
+<ParamField body="body-example" type="integer" default="0" required>
+   An example of a parameter body field
+  </ParamField>
+
+  <ParamField header="body-example" type="integer" default="0" required>
+   An example of a parameter body field
+  </ParamField>
+
+<RequestExample>
+  ```jsx Path Example
+    import os
+    from bigdata_client import Bigdata
+
+    # Initialize the Bigdata API
+    username = os.environ.get("BIGDATA_USERNAME")
+    password = os.environ.get("BIGDATA_PASSWORD")
+    bigdata = Bigdata(username, password)
+
+    # Fetch companies by ISINs
+    isins = ["US0378331005", "US0231351067", "LU1861138375"]
+    companies_by_isin = bigdata.knowledge_graph.get_companies_by_isin(isins)
+    for isin, company in zip(isins, companies_by_isin):
+      if company:
+          print(f"{company.name}: {company.id}")
+      else:
+          print(f"Company not found for ISIN {isin}")
+  ```
+
+  ```jsx Query Example
+  <ParamField query="filter" type="string" default="none" required>
+    The filtering command used to sort through the users
+  </ParamField>
+  ```
+
+  ```jsx Body Example
+  <ParamField body="user_age" type="integer" default="0" required>
+    The age of the user. Cannot be less than 0
+  </ParamField>
+  ```
+</RequestExample>
+
+## Props
+
+<ParamField body="query, path, body, or header" type="string">
+  Whether it is a query, path, body, or header parameter followed by the name
+</ParamField>
+
+<ParamField body="type" type="string">
+  Expected type of the parameter's value
+
+  Supports `number`, `string`, `bool`, `object`.
+
+  Arrays can be defined using the `[]` suffix. For example `string[]`.
+</ParamField>
+
+<ParamField body="required" type="boolean">
+  Indicate whether the parameter is required
+</ParamField>
+
+<ParamField body="deprecated" type="boolean">
+  Indicate whether the parameter is deprecated
+</ParamField>
+
+<ParamField body="default" type="string">
+  Default value used by the server if the request does not provide a value
+</ParamField>
+
+<ParamField body="initialValue" type="any">
+  Value that will be used to initialize the playground
+</ParamField>
+
+<ParamField body="placeholder" type="string">
+  Placeholder text for the input in the playground
+</ParamField>
+
+<ParamField body="children" type="string">
+  Description of the parameter (markdown enabled)
+</ParamField>
